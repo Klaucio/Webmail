@@ -7,10 +7,10 @@
                 <div class="panel-heading">
                     {{--<button id="btn_add" name="btn_add" class="btn btn-default pull-right">Compor</button>--}}
                     <a class="btn btn-small btn-success" href="{{ URL::to('mensagens/create') }}">Compose </a>
-                    <a class="btn btn-small btn-success" href="{{ URL::to('mensagens/edit',1) }}">INBOX
+                    <a class="btn btn-small btn-success" href="{{ URL::to('inbox') }}">INBOX
                         <span class="label label-default label-pill pull-right">{{$inbox }}</span> </a>
-                    <a class="btn btn-small btn-success" href="{{ URL::to('destroy/',1) }}">Sent
-                        <span class="label label-default label-pill pull-right">{{count($outbox)}}</span></a>
+                    <a class="btn btn-small btn-success" href="{{ URL::to('sent') }}">Sent
+                        <span class="label label-default label-pill pull-right">{{$outbox}}</span></a>
                 </div>
 
                 <div class="container">
@@ -24,19 +24,19 @@
                                     <div class="form-group">
                                         {!! Form::label('email', 'Email', ['class'=>'col-sm-2 control-label']) !!}
                                         <div class="col-sm-10">
-                                            {!! Form::email('email',null,['class'=>'form-control'] ) !!}
+                                            {!! Form::email('email',null,['class'=>'form-control', 'required'] ) !!}
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         {!! Form::label('assunto', 'Assunto', ['class'=>'col-sm-2 control-label']) !!}
                                         <div class="col-sm-10">
-                                            {!! Form::text('assunto', old('assunto'), ['class'=>'form-control', 'placeholder'=> 'Assunto']) !!}
+                                            {!! Form::text('assunto', old('assunto'), ['class'=>'form-control', 'required', 'placeholder'=> 'Assunto']) !!}
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         {!! Form::label('mensagem', 'Abreviatura', ['class'=>'col-sm-2 control-label']) !!}
                                         <div class="col-sm-10">
-                                            {!! Form::text('mensagem', old('mensagem'), ['class'=>'form-control','rows'=>5 , 'placeholder'=> 'Mensagem']) !!}
+                                            {!! Form::text('mensagem', old('mensagem'), ['class'=>'form-control', 'required','rows'=>5 , 'placeholder'=> 'Mensagem']) !!}
                                         </div>
                                     </div>
 

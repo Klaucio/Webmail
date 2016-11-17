@@ -9,8 +9,8 @@
                     <a class="btn btn-small btn-success" href="{{ URL::to('mensagens/create') }}">Compose </a>
                     <a class="btn btn-small btn-success" href="{{ URL::to('inbox') }}">INBOX
                         <span class="label label-default label-pill pull-right">{{$inbox }}</span> </a>
-                    <a class="btn btn-small btn-success" href="{{ URL::to('mensagens/destroy',1) }}">Sent
-                        <span class="label label-default label-pill pull-right">{{count($outbox)}}</span></a>
+                    <a class="btn btn-small btn-success" href="{{ URL::to('sent') }}">Sent
+                        <span class="label label-default label-pill pull-right">{{$outbox}}</span></a>
                 </div>
                 <div class="panel-body">
                     <img src="{{asset('img/email.png')}}" class="img-circle pull-right" style="width:50px">

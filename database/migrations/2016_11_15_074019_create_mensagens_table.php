@@ -19,7 +19,7 @@ class CreateMensagensTable extends Migration
             $table->string('assunto', 100);
             $table->longText('mensagem');
             $table->integer('users_id')->unsigned();
-            $table->foreign('users_id')->references('id')->on('mensagens')
+            $table->foreign('users_id')->references('id')->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 

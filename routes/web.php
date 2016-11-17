@@ -40,7 +40,8 @@
 
 //Route::resource('product', 'ProductController');
 Route::resource('mensagens', 'MensagensController');
-Route::resource('inbox', 'SentController');
+Route::resource('inbox', 'InboxController');
+Route::resource('sent', 'SentController');
 
 
 Route::get('/', function () {

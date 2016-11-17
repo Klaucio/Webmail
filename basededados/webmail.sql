@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 16, 2016 at 11:42 AM
+-- Generation Time: Nov 17, 2016 at 08:56 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -41,12 +41,8 @@ CREATE TABLE `mensagens` (
 --
 
 INSERT INTO `mensagens` (`id`, `email`, `assunto`, `mensagem`, `users_id`, `created_at`, `updated_at`) VALUES
-(1, 'clauciozitha@gmail.com', 'Teste', 'ClaucioKB', 1, '2016-11-16 01:59:32', '2016-11-16 01:59:32'),
-(2, 'believe@gmail.com', 'Assuntar', 'Aqui tem', 1, '2016-11-16 02:01:00', '2016-11-16 02:01:00'),
-(3, 'claucioentreter@gmail.com', 'Testar', 'Aqui tem', 1, '2016-11-16 02:03:28', '2016-11-16 02:03:28'),
-(4, 'claucioentreter23@gmail.com', 'Testar', 'Aqui tem', 1, '2016-11-16 02:04:00', '2016-11-16 02:04:00'),
-(5, 'testando@gmail.com', 'Testar', 'Aqui tem', 1, '2016-11-16 02:05:46', '2016-11-16 02:05:46'),
-(6, 'clauciozitha@gmail.com', 'Escola bae', 'Testei', 1, '2016-11-16 02:15:17', '2016-11-16 02:15:17');
+(1, 'clauciozitha@gmail.com', 'Testei', 'Olha veja tou testando', 1, '2016-11-17 17:51:19', '2016-11-17 17:51:19'),
+(2, 'clauciozitha@gmail.com', 'So pra ver', 'Ola Mundo dfghjkal adfhyujkl; afghajkl', 1, '2016-11-17 17:51:48', '2016-11-17 17:51:48');
 
 -- --------------------------------------------------------
 
@@ -102,7 +98,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Claucio', 'clauciozitha@gmail.com', '$2y$10$xHLcwRd7Y5gvjQgQumMmiuAeJ8aW3SuPRHd.YGnRtyG5QnfLWJha.', NULL, '2016-11-16 00:29:09', '2016-11-16 00:29:09');
+(1, 'Claucio KB', 'claucioentreter@gmail.com', '$2y$10$D1xEh0imZzeUGhp3aPkmmuddrciwS/oA8Lr8fDwAXrQcxTak2x1QK', 'IvTWaEHPT0CF0qzXXubKxE5JVKKeC0ZW3yWCc6RROmbpUrzUbTiq0GtBFlec', '2016-11-17 17:50:53', '2016-11-17 17:51:55'),
+(2, 'Claucio', 'clauciozitha@gmail.com', '$2y$10$8wxuBm7XZ5Q3TUXWyKdogOuyF.JM865QB.aqtdwZpCtruS8Y1lgTG', NULL, '2016-11-17 17:52:33', '2016-11-17 17:52:33');
 
 --
 -- Indexes for dumped tables
@@ -113,7 +110,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `creat
 --
 ALTER TABLE `mensagens`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `mensagens_user_id_foreign` (`users_id`);
+  ADD KEY `mensagens_users_id_foreign` (`users_id`);
 
 --
 -- Indexes for table `migrations`
@@ -143,7 +140,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `mensagens`
 --
 ALTER TABLE `mensagens`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -153,7 +150,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
@@ -162,7 +159,7 @@ ALTER TABLE `users`
 -- Constraints for table `mensagens`
 --
 ALTER TABLE `mensagens`
-  ADD CONSTRAINT `mensagens_user_id_foreign` FOREIGN KEY (`users_id`) REFERENCES `mensagens` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `mensagens_users_id_foreign` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

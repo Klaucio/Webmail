@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mensagens;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class InboxController extends Controller
 {
@@ -13,13 +19,14 @@ class InboxController extends Controller
      */
     public function index()
     {
+
         //
         $email=User::find(Auth::user()->id)->email;
         $achados=DB::table('mensagens')->where('email','=',$email)->get();//verifica emails recebidos
         $inbox=count($achados);
         $achados=DB::table('mensagens')->where('users_id','=',Auth::user()->id)->get();//verifica emails enviados
         $outbox=count($achados);
-        $mensagens = DB::table('mensagens')->where('email','=',$email)->get();
+        $mensagens = Mensagens::where('email','=',$email)->get();
         return view('mensagens.inbox')->with(compact('mensagens'))->with(compact('inbox'))->with(compact('outbox'));
     }
 
@@ -53,6 +60,8 @@ class InboxController extends Controller
     public function show($id)
     {
         //
+        $mensagem = Mensagens::find($id);
+        return view('mensagens.mensagens')->with('mensagem', $mensagem);
     }
 
     /**
@@ -87,5 +96,9 @@ class InboxController extends Controller
     public function destroy($id)
     {
         //
+
+        Mensagens::destroy($id);
+//        Session::flash('message', 'Mensagem Eliminad com sucesso!');
+        return Redirect::to('inbox');
     }
 }
