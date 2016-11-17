@@ -8,7 +8,6 @@
                     <a class="btn btn-small btn-success" href="#">
                         {{$mensagem->email}}
                     </a>
-
                 </div>
 
                 <div class="container">
@@ -27,6 +26,5 @@
             </div>
         </div>
     </div>
-
 @endsection
 

@@ -61,7 +61,11 @@ class InboxController extends Controller
     {
         //
         $mensagem = Mensagens::find($id);
-        return view('mensagens.mensagens')->with('mensagem', $mensagem);
+        $user=User::find($mensagem->id);
+        $name=$user->name;
+        $email=$user->email;
+        return view('mensagens.mensagens')->with(compact('mensagem'))->with(compact('name'))
+            ->with(compact('email'));
     }
 
     /**

@@ -59,7 +59,7 @@ class SentController extends Controller
     {
         //
         $mensagem = Mensagens::find($id);
-        return view('mensagens.sentDetais')->with('mensagem', $mensagem);
+        return view('mensagens.sentDetais')->with(compact('mensagem'));
     }
 
     /**

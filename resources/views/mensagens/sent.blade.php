@@ -30,7 +30,7 @@
                                 <td>{{$mensagem->assunto}}</td>
                                 <td>{{$mensagem->mensagem}}</td>
                                 <td>
-                                    {!! link_to_route('inbox.show', 'Detalhes', [$mensagem->id], ['class' => 'fa fa-eye btn btn-md btn-info']) !!}
+                                    {!! link_to_route('sent.show', 'Detalhes', [$mensagem->id], ['class' => 'fa fa-eye btn btn-md btn-info']) !!}
                                     {!! Form::open(['style' => 'display: inline-block;', 'method' => 'DELETE',
                                      'onsubmit' => 'return confirm(\'' . trans('quickadmin::admin.roles-index-are_you_sure') . '\');',
                                        'route' => ['inbox.destroy', $mensagem->id]]) !!}

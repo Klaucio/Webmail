@@ -6,9 +6,8 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <a class="btn btn-small btn-success" href="#">
-                        {{$mensagem->email}}
+                      To:  {{$mensagem->email}}
                     </a>
-
                 </div>
 
                 <div class="container">
