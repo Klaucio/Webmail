@@ -24,19 +24,19 @@
                                     <div class="form-group">
                                         {!! Form::label('email', 'Email', ['class'=>'col-sm-2 control-label']) !!}
                                         <div class="col-sm-10">
-                                            {!! Form::email('email',null,['class'=>'form-control', 'required'] ) !!}
+                                            {!! Form::email('email',null,['class'=>'form-control', 'required' ,'placeholder'=>'email do destinatário'] ) !!}
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         {!! Form::label('assunto', 'Assunto', ['class'=>'col-sm-2 control-label']) !!}
                                         <div class="col-sm-10">
-                                            {!! Form::text('assunto', old('assunto'), ['class'=>'form-control', 'required', 'placeholder'=> 'Assunto']) !!}
+                                            {!! Form::text('assunto', old('assunto'), ['class'=>'form-control', 'required', 'placeholder'=> 'Indique o assunto']) !!}
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        {!! Form::label('mensagem', 'Abreviatura', ['class'=>'col-sm-2 control-label']) !!}
+                                        {!! Form::label('mensagem', 'Mensagem', ['class'=>'col-sm-2 control-label']) !!}
                                         <div class="col-sm-10">
-                                            {!! Form::text('mensagem', old('mensagem'), ['class'=>'form-control', 'required','rows'=>5 , 'placeholder'=> 'Mensagem']) !!}
+                                            {!! Form::textarea('mensagem', old('mensagem'), ['class'=>'form-control', 'required','rows'=>5 , 'placeholder'=> 'Escreva a sua mensagem aqui!!!']) !!}
                                         </div>
                                     </div>
 
